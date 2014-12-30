@@ -1,0 +1,26 @@
+[user]
+	name = Vladan Mitevski
+	email = vladan@mvdevelop.com
+
+[alias]
+	# Use GitHub aliases with aliases from ~/.aliases file. Here is the list of ~/.aliases git aliases:
+	# alias add='git add -A'
+	# alias pull='git pull'
+	# alias push='git push'
+	# alias st='git status'
+	# Using git aliases this way we have shortcut for complete git commands such as pull, push, etc...
+	# and commands that requires additional typing before/after aliases.
+  co = checkout
+  cm = commit -m
+  cp = cherry-pick
+  br = branch
+  df = diff
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+
+[push]
+	default = simple
