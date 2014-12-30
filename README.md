@@ -1,4 +1,6 @@
-dotfiles
-========
+Vladan's dotfiles
+=================
 
-Handling zsh, aliases, git, vim dotfiles
+### Zsh
+
+Go to this URL [https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) for detailed instructions on how to install **oh-my-zsh**
