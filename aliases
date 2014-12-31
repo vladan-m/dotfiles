@@ -6,18 +6,11 @@ alias grc='cd ~/dev/repo/ggrc-core'
 
 #Vagrant
 alias vgup='vagrant up; vagrant ssh'
-alias vgoff='vagrant halt --force'
+alias vgdown='vagrant halt --force'
 
-# Use GitHub aliases with aliases from ~/.gitconfig file. Here is the list of ~/.gitconfig git aliases:
-# co = checkout
-# cm = commit -m
-# cp = cherry-pick
-# br = branch
-# df = diff
-# Using git aliases this way we have shortcut for complete git commands such as pull, push, etc...
-# and commands that requires additional typing before/after aliases.
+# Combine GitHub aliases with aliases from ~/.gitconfig file.
 alias add='git add -A'
 alias pull='git pull'
 alias push='git push'
 alias st='git status'
-
+alias who='git shortlog -n -s'
