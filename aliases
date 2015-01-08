@@ -3,8 +3,10 @@ alias l='ls'
 alias ll='ls -al'
 alias repo='cd ~/dev/repo'
 alias grc='cd ~/dev/repo/ggrc-core'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killAll Finder'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killAll Finder'
 
-#Vagrant
+# Vagrant
 alias vgup='vagrant up; vagrant ssh'
 alias vgdown='vagrant halt --force'
 
@@ -14,3 +16,6 @@ alias pull='git pull'
 alias push='git push'
 alias st='git status'
 alias who='git shortlog -n -s'
+
+# MacVim
+alias mvim='/Applications/MacVim.app/contents/MacOS/MacVim'
