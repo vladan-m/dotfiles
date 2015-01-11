@@ -23,3 +23,9 @@ additional typing commands before or after alias is written are created inside
 
 `.vimrc` is a file that I've been forked from basti and edited for my need. For
 additional information please visit [here](https://github.com/vladan-m/vimfiles)
+
+### SSH bash
+
+`.bashrc` and `.bash_profile` files should be updated on SSH server.
+`.bashrc` contain aliases for most used Unix and GitHub commands
+`.bash_profile` contain function for automaticaly source `.bashrc` file on SSH login
