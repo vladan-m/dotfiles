@@ -16,13 +16,12 @@ filetype plugin indent on
 runtime macros/matchit.vim  " enables % to cycle through `if/else/endif`
 
 syntax enable
-if has('gui_running')
-  set background=dark
-else
-  set background=dark
-endif
 
-color railscasts
+filetype plugin on          " enable markdown preview
+
+set background=dark
+
+color gruvbox
 set synmaxcol=800           " don't try to highlight long lines
 
 set number      " line numbers aren't needed
@@ -54,6 +53,7 @@ set backupskip=/tmp/*,/private/tmp/*"
 set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
+set softtabstop=2                 " use tabs when deleting empty space
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
@@ -132,13 +132,13 @@ augroup END
 " don't use Ex mode, use Q for formatting
 map Q gq
 
-" clear the search buffer when hitting return
-:nnoremap <CR> :nohlsearch<cr>
-
 " toggle the current fold
 :nnoremap <Space> za
 
 let mapleader=","
+
+" clear the search buffer
+noremap <leader>h :nohlsearch<CR>
 
 " yank to system clipboard
 map <leader>y "*y
@@ -157,13 +157,14 @@ map <leader>f :CommandT<cr>
 map <leader>F :CommandT %%<cr>
 
 let g:CommandTMatchWindowAtTop=1
-let g:CommandTMaxHeight=10
+let g:CommandTMaxHeight=20
 let g:CommandTMinHeight=2
 
-let g:turbux_command_test_unit = 'ruby -Ilib:test'
-" let g:turbux_command_cucumber = 'cucumber -f progress'
+" Open a new tab and search for something.
+nmap <leader>a :tab split<CR>:Ack ""<Left>
 
-let g:ackprg = 'ag --nogroup --nocolor --column -i'
+" Immediately search for the word under the cursor in a new tab.
+nmap <leader>A :tab split<CR>:Ack "\W<C-r><C-w>\W"<CR>
 
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>
@@ -215,6 +216,43 @@ map <Right> :echo "no!"<cr>
 map <Up>    :echo "no!"<cr>
 map <Down>  :echo "no!"<cr>
 
+set tabline=%!MyTabLine()
+
+function MyTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    " select the highlighting
+    if i + 1 == tabpagenr()
+      let s .= '%#TabLineSel#'
+    else
+      let s .= '%#TabLine#'
+    endif
+
+    " set the tab page number (for mouse clicks)
+    let s .= '%' . (i + 1) . 'T' 
+
+    " the label is made by MyTabLabel()
+    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+  endfor
+
+  " after the last tab fill with TabLineFill and reset tab page nr
+  let s .= '%#TabLineFill#%T'
+
+  " right-align the label to close the current tab page
+  if tabpagenr('$') > 1 
+    let s .= '%=%#TabLine#%999Xclose'
+  endif
+
+  return s
+endfunction
+
+function MyTabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  let label =  bufname(buflist[winnr - 1]) 
+  return fnamemodify(label, ":t") 
+endfunction
+
 if has("statusline") && !&cp
   set laststatus=2                   " always show the status bar
   set statusline=%<%1*\ %f\ %*       " filename
@@ -226,3 +264,6 @@ if has("statusline") && !&cp
   set statusline+=\ %5*%v%*[0x%B]    " current column [hex char]
 endif
 
+" Nerd Tree
+inoremap <f2> <esc>:NERDTreeToggle<cr>
+nnoremap <f2> <esc>:NERDTreeToggle<cr>
