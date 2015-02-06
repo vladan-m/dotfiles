@@ -8,7 +8,7 @@ ZSH_THEME="mh"
 plugins=(git zsh-syntax-highlighting)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
