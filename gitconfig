@@ -1,23 +1,16 @@
 [user]
-	name = Vladan Mitevski
-	email = vladan@mvdevelop.com
-
-[alias]
-	# Combine GitHub aliases with aliases from ~/.aliases file.
-	co = checkout
-	cm = commit -m
-	cp = cherry-pick
-	br = branch
-	df = diff
+  name = Vladan Mitevski
+  email = vladan@mvdevelop.com
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  ui = auto
 
 [push]
-	default = simple
+  default = simple
 
 [core]
-	excludesfile = /Users/vladanmitevski/.gitignore
+  excludesfile = /Users/vladanmitevski/.gitignore
+  editor = vim

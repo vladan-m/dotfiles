@@ -10,12 +10,14 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killAll F
 alias vgup='vagrant up; vagrant ssh'
 alias vgdown='vagrant halt --force'
 
-# Combine GitHub aliases with aliases from ~/.gitconfig file.
+# GitHub
 alias add='git add -A'
 alias pull='git pull'
 alias push='git push'
 alias st='git status'
 alias who='git shortlog -n -s'
-
-# MacVim
-alias mvim='/Applications/MacVim.app/contents/MacOS/MacVim'
+alias cm='git commit'
+alias br='git branch'
+alias co='git checkout'
+alias cp='git cherry-pick'
+alias diff='git diff'
