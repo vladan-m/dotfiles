@@ -11,13 +11,33 @@ Once that is done copy/paste `.zshrc` file into your home directory (for OS X us
 ### Aliases
 
 I prefer to have global aliases listed in a separate file so it can be sourced
-to `.zshrc` file or to `.bashrc`. Some of the git aliases that requires
-additional typing commands before or after alias is written are created inside
-`.gitconfig` file.
+to `.zshrc` file or to `.bashrc`. This file contain following aliases:
+
+#### Unix
+* `l` = `ls`
+* `ll` = `ls -al`
+* `showFiles` = `defaults write com.apple.finder AppleShowAllFiles YES; killAll Finder`
+* `hideFiles` = `defaults write com.apple.finder AppleShowAllFiles NO; killAll Finder`
+
+#### Vagrant
+* `vgup` = `vagrant up; vagrant ssh`
+* `vgdown` = `vagrant halt --force`
+
+#### Github
+* `add` = `git add -A`
+* `pull` = `git pull`
+* `push` = `git push`
+* `st` = `git status`
+* `who` = `git shortlog -n -s`
+* `cm` = `git commit`
+* `br` = `git branch`
+* `co` = `git checkout`
+* `cp` = `git cherry-pick`
+* `diff` = `git diff`
 
 ### Git
 
-`.gitconfig` file with aliases and all the other global git setup.
+`.gitconfig` file with global git setup.
 
 ### Vim
 
