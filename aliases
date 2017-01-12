@@ -1,8 +1,7 @@
 # Unix
 alias l='ls'
 alias ll='ls -al'
-alias repo='cd ~/dev/repo'
-alias grc='cd ~/dev/repo/ggrc-core'
+alias rnd='cd ~/develop/RnD'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killAll Finder'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killAll Finder'
 
@@ -21,3 +20,4 @@ alias br='git branch'
 alias co='git checkout'
 alias cp='git cherry-pick'
 alias diff='git diff'
+alias br-del='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
