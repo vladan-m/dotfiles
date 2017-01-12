@@ -3,7 +3,7 @@ Vladan's dotfiles
 
 ### Zsh
 
-Go to this URL [https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) 
+Go to this URL [https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 for detailed instructions on how to install **oh-my-zsh**.
 
 Once that is done copy/paste `.zshrc` file into your home directory (for OS X users type in `cd ~`).
@@ -34,6 +34,7 @@ to `.zshrc` file or to `.bashrc`. This file contain following aliases:
 * `co` = `git checkout`
 * `cp` = `git cherry-pick`
 * `diff` = `git diff`
+* `br-del` = `git branch --merged | grep -v "\*" | xargs -n 1 git branch -d`
 
 ### Git
 
